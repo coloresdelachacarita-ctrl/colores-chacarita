@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "nombre": "Mural Guarania",
+    "lat": -25.2746,
+    "lng": -57.6353,
+    "descripcion": "Homenaje a la Guarania."
+  },
+  {
+    "id": 2,
+    "nombre": "Memoria del Río",
+    "lat": -25.2762,
+    "lng": -57.6401,
+    "descripcion": "Historia del barrio."
+  }
+]
