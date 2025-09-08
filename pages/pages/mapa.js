@@ -1,3 +1,4 @@
+
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 
@@ -6,14 +7,17 @@ const MapContainer = dynamic(
   () => import("react-leaflet").then(mod => mod.MapContainer),
   { ssr: false }
 );
+
 const TileLayer = dynamic(
   () => import("react-leaflet").then(mod => mod.TileLayer),
   { ssr: false }
 );
+
 const Marker = dynamic(
   () => import("react-leaflet").then(mod => mod.Marker),
   { ssr: false }
 );
+
 const Popup = dynamic(
   () => import("react-leaflet").then(mod => mod.Popup),
   { ssr: false }
@@ -31,7 +35,7 @@ export default function Mapa() {
   return (
     <div style={{ height: "100vh", width: "100%" }}>
       <MapContainer
-        center={[-25.2746, -57.6353]}
+        center={[-25.2746, -57.6353]} // Centro aproximado de Asunción
         zoom={15}
         style={{ height: "100%", width: "100%" }}
       >
@@ -50,4 +54,4 @@ export default function Mapa() {
       </MapContainer>
     </div>
   );
-    } Update mapa.js
+}
