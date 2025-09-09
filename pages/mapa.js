@@ -1,13 +1,25 @@
 // pages/mapa.js
-import dynamic from 'next/dynamic';
+import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 
-const Map = dynamic(() => import('../components/Map'), { ssr: false });
+// Importamos el componente del mapa sin SSR
+const MapaLeaflet = dynamic(() => import("../components/MapaLeaflet"), {
+  ssr: false,
+});
 
 export default function MapaPage() {
+  const [murales, setMurales] = useState([]);
+
+  useEffect(() => {
+    fetch("/murales.json")
+      .then((res) => res.json())
+      .then((data) => setMurales(data))
+      .catch((e) => console.error("Error cargando murales.json", e));
+  }, []);
+
   return (
-    <div style={{ width: '100%', height: '100vh' }}>
-      <h1>Mapa de Murales</h1>
-      <Map />
+    <div style={{ height: "100vh", width: "100%" }}>
+      <MapaLeaflet murales={murales} />
     </div>
   );
 }
