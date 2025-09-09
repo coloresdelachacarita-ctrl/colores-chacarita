@@ -1,39 +1,44 @@
-
 [
-  { "id": 1,  "nombre": "Cerros y Palmares", "autor": "Juan Cáceres, Carolina Melgarejo.", "lat": null, "lng": null },
-  { "id": 2,  "nombre": "Mural Inclusivo “Prof. Prudencio Vidal Zelaya”", "autor": "Taller de Muralismo y Arte Público Jopói (Valentina Silva, Antonella Rojas, Luz Céspedes, Carolina Melgarejo, Gonzalo Galeano, Juan Cáceres)", "lat": null, "lng": null },
-  { "id": 3,  "nombre": "El abrazo de los Pájaros", "autor": "Claudia Casarino, Javier Vera + vecinos.", "lat": null, "lng": null },
-  { "id": 4,  "nombre": "La serenata", "autor": "Oz Montanía, Saile (Mural Latido Americano 2016).", "lat": null, "lng": null },
-  { "id": 5,  "nombre": "La serenata", "autor": "Oz Montanía, Saile (Mural Latido Americano 2016).", "lat": null, "lng": null },
-  { "id": 6,  "nombre": "Doña Nena", "autor": "Betsy Casanas (Mural Latido Americano 2016).", "lat": null, "lng": null },
-  { "id": 7,  "nombre": "Tu eira ndeva tẽso", "autor": "Rodolfo Da Costa (Mural Latido Americano 2016).", "lat": null, "lng": null },
-  { "id": 8,  "nombre": "Lo esencial es invisible a los ojos", "autor": "Claribel Pérez (Mural Latido Americano 2016).", "lat": null, "lng": null },
-  { "id": 9,  "nombre": "Ñamandú", "autor": "Mauro Maluf (Mural Latido Americano 2016).", "lat": null, "lng": null },
-  { "id": 10, "nombre": "Sin título", "autor": "Federico Calandria (Mural Latido Americano 2016).", "lat": null, "lng": null },
-  { "id": 11, "nombre": "Jopói", "autor": "Pamela Martínez, Daniruzo, Roxana Casas, Joaquín (Mural Latido Americano 2016).", "lat": null, "lng": null },
-  { "id": 12, "nombre": "El vuelo de los gorriones", "autor": "Claudia Casarino, Colectivo Cigarra.", "lat": null, "lng": null },
-  { "id": 13, "nombre": "Neumas", "autor": "Claudia Casarino + vecinos del barrio.", "lat": null, "lng": null },
-  { "id": 14, "nombre": "Homenaje a los Sonidos", "autor": "Claudia Casarino + vecinos del barrio.", "lat": null, "lng": null },
-  { "id": 15, "nombre": "Al ritmo del barrio", "autor": "Claudia Casarino + vecinos del barrio.", "lat": null, "lng": null },
-  { "id": 16, "nombre": "Juego de niños", "autor": "Claudia Casarino + vecinos del barrio.", "lat": null, "lng": null },
-  { "id": 17, "nombre": "La vecina de enfrente", "autor": "Colectivo La Cuadra.", "lat": null, "lng": null },
-  { "id": 18, "nombre": "Dobles", "autor": "Claudia Casarino + vecinos del barrio.", "lat": null, "lng": null },
-  { "id": 19, "nombre": "Jopói (mural posterior)", "autor": "Claudia Casarino + vecinos del barrio.", "lat": null, "lng": null },
-  { "id": 20, "nombre": "La siesta", "autor": "Claudia Casarino + vecinos del barrio.", "lat": null, "lng": null },
-  { "id": 21, "nombre": "La niña del río", "autor": "Claudia Casarino + vecinos del barrio.", "lat": null, "lng": null },
-  { "id": 22, "nombre": "Mural del Taller de muralismo Jopoi", "autor": "Luisana González, Silvia Navarro, Kathya Guillen, Fabian Toloza, David Ocampos", "lat": null, "lng": null },
-  { "id": 23, "nombre": "Iglesia San Blas – Homenaje", "autor": "Claudia Casarino + vecinos del barrio.", "lat": null, "lng": null },
-  { "id": 24, "nombre": "Giro de luz", "autor": "Fito Chastre (Mural Latido Americano 2016).", "lat": null, "lng": null },
-  { "id": 25, "nombre": "Pynandí", "autor": "Lili Cantero (Mural Latido Americano 2016).", "lat": null, "lng": null },
-  { "id": 26, "nombre": "La niña del trompo", "autor": "Shamaniko (Mural Latido Americano 2016).", "lat": null, "lng": null },
-  { "id": 27, "nombre": "Yvoty", "autor": "Paula Scher (Mural Latido Americano 2016).", "lat": null, "lng": null },
-  { "id": 28, "nombre": "Por las manos de mi abuelo", "autor": "Rodolfo Da Costa (Mural Latido Americano 2016).", "lat": null, "lng": null },
-  { "id": 29, "nombre": "Ñemity", "autor": "Bárbara Sosa (Mural Latido Americano 2016).", "lat": null, "lng": null },
-  { "id": 30, "nombre": "Sin título", "autor": "Raúl (Mural Latido Americano 2016).", "lat": null, "lng": null },
-  { "id": 31, "nombre": "Yvoty (variante)", "autor": "Paula Scher (Mural Latido Americano 2016).", "lat": null, "lng": null },
-  { "id": 32, "nombre": "Karai octubre", "autor": "Hugo Cataldo (Mural Latido Americano 2016).", "lat": null, "lng": null },
-  { "id": 33, "nombre": "El tereré", "autor": "Andrea Rivas (Mural Latido Americano 2016).", "lat": null, "lng": null },
-  { "id": 34, "nombre": "Sin título", "autor": "Balam Bartolomé (Mural Latido Americano 2016).", "lat": null, "lng": null },
-  { "id": 35, "nombre": "Ñe’ẽ porã", "autor": "Andrea Rivas (Mural Latido Americano 2016).", "lat": null, "lng": null },
-  { "id": 36, "nombre": "Jopói – mural final", "autor": "Claudia Casarino + vecinos del barrio.", "lat": null, "lng": null }
+  {
+    "id": 1,
+    "nombre": "Mural Fabio Garcete y Liz Katia",
+    "autor": "Colores de la Chacarita",
+    "lat": -25.28210,
+    "lng": -57.63650
+  },
+  {
+    "id": 2,
+    "nombre": "Mural Bernardo Hermosa",
+    "autor": "Colores de la Chacarita",
+    "lat": -25.28260,
+    "lng": -57.63520
+  },
+  {
+    "id": 3,
+    "nombre": "Mural G. Sellitti",
+    "autor": "Colores de la Chacarita",
+    "lat": -25.28150,
+    "lng": -57.63490
+  },
+  {
+    "id": 4,
+    "nombre": "Mural Juan Cáceres y Renate Howhell",
+    "autor": "Colores de la Chacarita",
+    "lat": -25.28290,
+    "lng": -57.63280
+  },
+  {
+    "id": 5,
+    "nombre": "Mural Renate Holleg - Juan Cáceres",
+    "autor": "Colores de la Chacarita",
+    "lat": -25.28430,
+    "lng": -57.63610
+  },
+  {
+    "id": 6,
+    "nombre": "Mural del SIRT",
+    "autor": "Colores de la Chacarita",
+    "lat": -25.28720,
+    "lng": -57.63950
+  }
 ]
