@@ -1,3 +1,4 @@
+
 [
   { "id": 1,  "nombre": "Cerros y Palmares", "autor": "Juan Cáceres, Carolina Melgarejo.", "lat": null, "lng": null },
   { "id": 2,  "nombre": "Mural Inclusivo “Prof. Prudencio Vidal Zelaya”", "autor": "Taller de Muralismo y Arte Público Jopói (Valentina Silva, Antonella Rojas, Luz Céspedes, Carolina Melgarejo, Gonzalo Galeano, Juan Cáceres)", "lat": null, "lng": null },
@@ -21,7 +22,7 @@
   { "id": 20, "nombre": "La siesta", "autor": "Claudia Casarino + vecinos del barrio.", "lat": null, "lng": null },
   { "id": 21, "nombre": "La niña del río", "autor": "Claudia Casarino + vecinos del barrio.", "lat": null, "lng": null },
   { "id": 22, "nombre": "Mural del Taller de muralismo Jopoi", "autor": "Luisana González, Silvia Navarro, Kathya Guillen, Fabian Toloza, David Ocampos", "lat": null, "lng": null },
-  { "id": 23, "nombre": "Iglesia Católica San Blas – Homenaje", "autor": "Claudia Casarino + vecinos del barrio.", "lat": null, "lng": null },
+  { "id": 23, "nombre": "Iglesia San Blas – Homenaje", "autor": "Claudia Casarino + vecinos del barrio.", "lat": null, "lng": null },
   { "id": 24, "nombre": "Giro de luz", "autor": "Fito Chastre (Mural Latido Americano 2016).", "lat": null, "lng": null },
   { "id": 25, "nombre": "Pynandí", "autor": "Lili Cantero (Mural Latido Americano 2016).", "lat": null, "lng": null },
   { "id": 26, "nombre": "La niña del trompo", "autor": "Shamaniko (Mural Latido Americano 2016).", "lat": null, "lng": null },
