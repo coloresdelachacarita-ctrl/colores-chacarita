@@ -1,9 +1,8 @@
-
 // components/MapaLeaflet.jsx
 import dynamic from "next/dynamic";
 import { useEffect, useMemo, useState } from "react";
 
-// Cargas dinámicas (SSR off) para Next.js
+// Cargas dinámicas (sin SSR) para Next.js
 const MapContainer = dynamic(() => import("react-leaflet").then(m => m.MapContainer), { ssr: false });
 const TileLayer     = dynamic(() => import("react-leaflet").then(m => m.TileLayer),     { ssr: false });
 const Marker        = dynamic(() => import("react-leaflet").then(m => m.Marker),        { ssr: false });
@@ -11,11 +10,8 @@ const Popup         = dynamic(() => import("react-leaflet").then(m => m.Popup), 
 const useMapEvents  = dynamic(() => import("react-leaflet").then(m => m.useMapEvents),  { ssr: false });
 
 function ClickCatcher({ onClick }) {
-  // Captura clicks en el mapa cuando estamos en modo marcar
   useMapEvents({
-    click(e) {
-      onClick(e.latlng);
-    }
+    click(e) { onClick(e.latlng); }
   });
   return null;
 }
@@ -24,6 +20,7 @@ export default function MapaLeaflet() {
   const [murales, setMurales] = useState([]);
   const [tempPoint, setTempPoint] = useState(null);
 
+  // Centro aproximado Chacarita
   const center = useMemo(() => ({ lat: -25.2746, lng: -57.6353 }), []);
 
   useEffect(() => {
@@ -33,23 +30,40 @@ export default function MapaLeaflet() {
       .catch(() => setMurales([]));
   }, []);
 
-  // ¿Estamos en modo marcar? (si la URL contiene ?marcar=1)
-  const marcar = useMemo(() => {
-    if (typeof window === "undefined") return false;
+  // Query params
+  const { marcar, targetId } = useMemo(() => {
+    if (typeof window === "undefined") return { marcar: false, targetId: null };
     const sp = new URLSearchParams(window.location.search);
-    return sp.get("marcar") === "1";
+    return {
+      marcar: sp.get("marcar") === "1",
+      targetId: sp.get("id") ? Number(sp.get("id")) : null
+    };
   }, []);
+
+  const target = useMemo(
+    () => (targetId ? murales.find(m => m.id === targetId) : null),
+    [murales, targetId]
+  );
 
   const handleClick = (latlng) => {
     setTempPoint(latlng);
+    const snippetOnlyCoords = `"lat": ${latlng.lat.toFixed(6)}, "lng": ${latlng.lng.toFixed(6)}`;
 
-    // Construimos un snippet para copiar y pegar en murales.json
-    const snippet = `"lat": ${latlng.lat.toFixed(6)}, "lng": ${latlng.lng.toFixed(6)}`;
-    // intentamos copiar al portapapeles
+    let snippet =
+      target
+        ? `{\n  "id": ${target.id},\n  "nombre": "${target.nombre}",\n  "autor": "${target.autor}",\n  "lat": ${latlng.lat.toFixed(6)},\n  "lng": ${latlng.lng.toFixed(6)}\n}`
+        : snippetOnlyCoords;
+
+    // copiar al portapapeles
     if (navigator?.clipboard?.writeText) {
       navigator.clipboard.writeText(snippet).catch(() => {});
     }
-    alert(`Coordenadas copiadas:\n${snippet}\n\nPégalo en el mural correspondiente dentro de public/murales.json`);
+
+    alert(
+      target
+        ? `Coordenadas para el mural #${target.id}:\n\n${snippet}\n\nPégalo en public/murales.json (reemplazando lat/lng del id ${target.id}).`
+        : `Coordenadas copiadas:\n${snippetOnlyCoords}\n\nAgrega estos valores en el mural correspondiente.`
+    );
   };
 
   return (
@@ -59,7 +73,7 @@ export default function MapaLeaflet() {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
 
-      {/* Marcadores ya definidos (solo si tienen lat/lng) */}
+      {/* Marcadores ya definidos */}
       {murales
         .filter(m => typeof m.lat === "number" && typeof m.lng === "number")
         .map(m => (
@@ -71,13 +85,16 @@ export default function MapaLeaflet() {
           </Marker>
         ))}
 
-      {/* Modo marcar: capturar click y dejar un pin temporal */}
+      {/* Modo marcar */}
       {marcar && (
         <>
           <ClickCatcher onClick={handleClick} />
           {tempPoint && (
             <Marker position={[tempPoint.lat, tempPoint.lng]}>
-              <Popup>Temporal: {tempPoint.lat.toFixed(6)}, {tempPoint.lng.toFixed(6)}</Popup>
+              <Popup>
+                Temporal: {tempPoint.lat.toFixed(6)}, {tempPoint.lng.toFixed(6)}<br/>
+                {target ? <b>Asignando a #{target.id}: {target.nombre}</b> : null}
+              </Popup>
             </Marker>
           )}
         </>
