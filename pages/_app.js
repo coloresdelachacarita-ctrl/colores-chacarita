@@ -1,6 +1,8 @@
-// pages/_app.js
-import 'leaflet/dist/leaflet.css'; // Importa los estilos de Leaflet
+import '../styles/globals.css'
 
-export default function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
 }
+
+export default MyApp
+
