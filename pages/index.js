@@ -3,10 +3,9 @@ import Link from "next/link";
 export default function Home() {
   const muralesDestacados = [
     { 
-      nombre: "Mural Fabio Garcete y Liz Katia", 
-      autor: "Fabio Garcete & Liz Katia", 
-      urlFoto: "https://lh5.googleusercontent.com/p/AF1QipN..." // Aquí pegas el link de la foto de Maps
-    },
+      nombre: "Galoperas ", 
+      autor: "lidia", 
+      urlFoto: "https://lh5.googleusercontent.com/p/AF1QipN..." //https://maps.app.goo.gl/TMsW5op1zLgi9Mvu8   },
     { 
       nombre: "Mural Juan Cáceres y Renate Howell", 
       autor: "Juan Cáceres & Renate Howell", 
