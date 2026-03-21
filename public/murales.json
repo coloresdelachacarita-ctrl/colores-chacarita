@@ -1,44 +1,68 @@
-[
-  {
-    "id": 1,
-    "nombre": "Mural Fabio Garcete y Liz Katia",
-    "autor": "Colores de la Chacarita",
-    "lat": -25.28210,
-    "lng": -57.63650
-  },
-  {
-    "id": 2,
-    "nombre": "Mural Bernardo Hermosa",
-    "autor": "Colores de la Chacarita",
-    "lat": -25.28260,
-    "lng": -57.63520
-  },
-  {
-    "id": 3,
-    "nombre": "Mural G. Sellitti",
-    "autor": "Colores de la Chacarita",
-    "lat": -25.28150,
-    "lng": -57.63490
-  },
-  {
-    "id": 4,
-    "nombre": "Mural Juan Cáceres y Renate Howhell",
-    "autor": "Colores de la Chacarita",
-    "lat": -25.28290,
-    "lng": -57.63280
-  },
-  {
-    "id": 5,
-    "nombre": "Mural Renate Holleg - Juan Cáceres",
-    "autor": "Colores de la Chacarita",
-    "lat": -25.28430,
-    "lng": -57.63610
-  },
-  {
-    "id": 6,
-    "nombre": "Mural del SIRT",
-    "autor": "Colores de la Chacarita",
-    "lat": -25.28720,
-    "lng": -57.63950
-  }
-]
+{
+  "anfitriones": [
+    {
+      "id": "gonzalo",
+      "nombre": "Gonzalo Galeano",
+      "rol": "Mediador Cultural",
+      "descripcion": "Especialista en gestión comunitaria y relatos de transformación."
+    },
+    {
+      "id": "jose",
+      "nombre": "Jose Luis Molas",
+      "rol": "Guía de Patrimonio",
+      "descripcion": "Conocedor de la historia profunda y la identidad de la Chacarita."
+    }
+  ],
+  "murales": [
+    {
+      "identificacion": 1,
+      "nombre": "Mural Fabio Garcete y Liz Katia",
+      "autor": "Colores de la Chacarita",
+      "lat": -25.28210,
+      "lng": -57.63650,
+      "ruta": "identidad"
+    },
+    {
+      "identificacion": 2,
+      "nombre": "Mural Bernardo Hermosa",
+      "autor": "Colores de la Chacarita",
+      "lat": -25.28260,
+      "lng": -57.63520,
+      "ruta": "identidad"
+    },
+    {
+      "identificacion": 3,
+      "nombre": "Mural de G. Sellitto",
+      "autor": "Colores de la Chacarita",
+      "lat": -25.28150,
+      "lng": -57.63490,
+      "ruta": "identidad"
+    },
+    {
+      "identificacion": 4,
+      "nombre": "Mural Juan Cáceres y Renate Howell",
+      "autor": "Colores de la Chacarita",
+      "lat": -25.28290,
+      "lng": -57.63280,
+      "ruta": "rostros"
+    },
+    {
+      "identificacion": 5,
+      "nombre": "Mural Renate Holleg - Juan Cáceres",
+      "autor": "Colores de la Chacarita",
+      "lat": -25.28430,
+      "lng": -57.63610,
+      "ruta": "rostros"
+    }
+  ],
+  "comercios": [
+    {
+      "id": "gastronomia_1",
+      "nombre": "Ejemplo Local Gastronómico",
+      "descripcion": "Sabores típicos de la Chacarita",
+      "lat": -25.28180,
+      "lng": -57.63100,
+      "suscrito": true
+    }
+  ]
+}
