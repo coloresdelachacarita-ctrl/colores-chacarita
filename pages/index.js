@@ -2,69 +2,52 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div style={{ fontFamily: "Arial, sans-serif", background: "#fefaf6", minHeight: "100vh" }}>
-      {/* Encabezado */}
-      <header style={{ textAlign: "center", padding: "2rem", background: "#ffdd99" }}>
-        <h1 style={{ fontSize: "2.5rem", marginBottom: "0.5rem", color: "#333" }}>
-          🎨 Circuito de Murales – Colores de la Chacarita
+    <div style={{ fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif", background: "#fefaf6", minHeight: "100vh", color: "#333" }}>
+      
+      {/* Encabezado Principal */}
+      <header style={{ 
+        textAlign: "center", 
+        padding: "4rem 2rem", 
+        background: "linear-gradient(135deg, #ffdd99 0%, #ffcc66 100%)",
+        borderBottom: "5px solid #ff6600" 
+      }}>
+        <h1 style={{ fontSize: "2.8rem", marginBottom: "0.5rem" }}>
+          🎨 Colores de la Chacarita
         </h1>
-        <p style={{ fontSize: "1.2rem", color: "#555" }}>
-          Un recorrido artístico, turístico y comunitario por el corazón de Asunción
+        <p style={{ fontSize: "1.3rem", maxWidth: "700px", margin: "0 auto", lineHeight: "1.5" }}>
+          Descubre el circuito de murales, historias y sabores guiado por referentes locales.
         </p>
-        <Link href="/mapa">
-          <button style={{ marginTop: "1rem", padding: "0.7rem 1.5rem", fontSize: "1rem", borderRadius: "8px", border: "none", background: "#ff6600", color: "#fff", cursor: "pointer" }}>
-            🗺 Ir al mapa
-          </button>
-        </Link>
+        <div style={{ marginTop: "2rem" }}>
+          <Link href="/mapa">
+            <button style={{ padding: "1rem 2rem", fontSize: "1.1rem", borderRadius: "30px", border: "none", background: "#ff6600", color: "#fff", cursor: "pointer", fontWeight: "bold", boxShadow: "0 4px 10px rgba(0,0,0,0.1)" }}>
+              📍 Ir al Mapa de Murales
+            </button>
+          </Link>
+        </div>
       </header>
 
-      {/* Sección Anfitriones */}
-      <section style={{ padding: "2rem" }}>
-        <h2>👥 Nuestros Anfitriones Turísticos</h2>
-        <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginTop: "1rem" }}>
-          <div style={{ flex: "1", minWidth: "250px", padding: "1rem", border: "1px solid #ccc", borderRadius: "8px" }}>
-            <h3>🌟 Juana López</h3>
-            <p><strong>Especialidad:</strong> Ruta de la Guarania</p>
-            <p>Juana te guía por los murales inspirados en José Asunción Flores y la música paraguaya.</p>
+      {/* Sección de Anfitriones Reales */}
+      <section style={{ padding: "3rem 2rem", maxWidth: "1000px", margin: "0 auto" }}>
+        <h2 style={{ borderLeft: "6px solid #ff6600", paddingLeft: "15px" }}>👥 Anfitriones del Circuito</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem", marginTop: "2rem" }}>
+          
+          <div style={{ background: "#fff", padding: "1.5rem", borderRadius: "12px", boxShadow: "0 4px 6px rgba(0,0,0,0.05)", border: "1px solid #eee" }}>
+            <h3 style={{ color: "#ff6600", margin: "0 0 10px 0" }}>🌟 Gonzalo Galeano</h3>
+            <p style={{ margin: "0", fontWeight: "bold" }}>Mediador Cultural</p>
+            <p style={{ fontSize: "0.95rem" }}>Experto en la gestión comunitaria y los relatos de transformación a través del arte.</p>
           </div>
-          <div style={{ flex: "1", minWidth: "250px", padding: "1rem", border: "1px solid #ccc", borderRadius: "8px" }}>
-            <h3>🌟 Carlos Gómez</h3>
-            <p><strong>Especialidad:</strong> Ruta del Río</p>
-            <p>Carlos te lleva por los murales cercanos al río Paraguay con historias del puerto.</p>
+
+          <div style={{ background: "#fff", padding: "1.5rem", borderRadius: "12px", boxShadow: "0 4px 6px rgba(0,0,0,0.05)", border: "1px solid #eee" }}>
+            <h3 style={{ color: "#ff6600", margin: "0 0 10px 0" }}>🌟 Jose Luis Molas</h3>
+            <p style={{ margin: "0", fontWeight: "bold" }}>Guía de Patrimonio</p>
+            <p style={{ fontSize: "0.95rem" }}>Conocedor de la historia profunda, las anécdotas y la identidad viva del barrio.</p>
           </div>
-          <div style={{ flex: "1", minWidth: "250px", padding: "1rem", border: "1px solid #ccc", borderRadius: "8px" }}>
-            <h3>🌟 María Fernández</h3>
-            <p><strong>Especialidad:</strong> Ruta Gastronómica</p>
-            <p>María combina murales con paradas en comedores populares para degustar chipas y sopa paraguaya.</p>
-          </div>
+
         </div>
       </section>
 
-      {/* Secciones extra */}
-      <section style={{ padding: "2rem", background: "#f4f4f4" }}>
-        <h2>🛍 Merchandising</h2>
-        <p>Remeras, tazas y pósters con diseños de los murales para apoyar al proyecto.</p>
-      </section>
-
-      <section style={{ padding: "2rem" }}>
-        <h2>🍲 Gastronomía</h2>
-        <p>Sabores típicos de la Chacarita: mbeju, chipa guazú, sopa paraguaya y mucho más.</p>
-      </section>
-
-      <section style={{ padding: "2rem", background: "#f4f4f4" }}>
-        <h2>📖 Historia</h2>
-        <p>Historias de resistencia, solidaridad y cultura viva del barrio.</p>
-      </section>
-
-      <section style={{ padding: "2rem" }}>
-        <h2>🏛 Arquitectura</h2>
-        <p>Casas antiguas, patrimonio histórico y la identidad visual de la Chacarita.</p>
-      </section>
-
-      {/* Footer */}
-      <footer style={{ textAlign: "center", padding: "1rem", marginTop: "2rem", background: "#222", color: "#fff" }}>
-        <p>© 2025 Colores de la Chacarita – Arte Público y Turismo Comunitario</p>
-      </footer>
-    </div>
-  );
-}
+      {/* Sección Comercial para Suscripciones */}
+      <section style={{ padding: "3rem 2rem", background: "#fdf2e9", textAlign: "center" }}>
+        <h2 style={{ color: "#d35400" }}>🍲 Sabores y Comercio Local</h2>
+        <p style={{ maxWidth: "600px", margin: "0 auto" }}>Visibilizamos los emprendimientos de la zona para fortalecer nuestra comunidad.</p>
+        <div style={{ marginTop: "1.5rem", padding: "1.5rem", background: "#fff
