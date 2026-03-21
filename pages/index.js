@@ -5,89 +5,73 @@ export default function Home() {
     {
       nombre: "Gonzalo Galeano",
       rol: "Mediador Cultural",
-      descripcion: "Relatos de transformación y gestión comunitaria en el barrio.",
       wa: "https://wa.me/595961793791",
-      ig: "https://www.instagram.com/gonza8511?igsh=MWJ4NTc5djdmbzRibQ==",
-      foto: "https://raw.githubusercontent.com/coloresdelachacarita-ctrl/colores-chacarita/principal/public/gonzalo.png" // Asegúrate de que el nombre coincida
+      ig: "https://www.instagram.com/gonza8511",
+      foto: "/GONZALO,GALEANO.jpg" // Nombre exacto de tu archivo subido
     },
     {
       nombre: "Jose Luis Molas",
       rol: "Guía de Patrimonio",
-      descripcion: "Historia profunda y la identidad viva del barrio Chacarita.",
       wa: "https://wa.me/595987418543",
       fb: "https://www.facebook.com/share/1BMUSbvY24/",
-      foto: "https://raw.githubusercontent.com/coloresdelachacarita-ctrl/colores-chacarita/principal/public/joseluis.png"
+      foto: "/Jose,Luis,Molas.png" // Nombre exacto de tu archivo subido
     }
   ];
 
   return (
-    <div style={{ fontFamily: 'Arial, sans-serif', background: '#fefaf6', minHeight: '100vh', paddingBottom: '3rem' }}>
+    <div style={{ fontFamily: 'Arial, sans-serif', background: '#fefaf6', minHeight: '100vh' }}>
       
-      {/* Encabezado */}
       <header style={{ textAlign: 'center', padding: '3rem 1rem', background: 'linear-gradient(to bottom, #ffdd99, #fefaf6)' }}>
-        <h1 style={{ fontSize: '2.2rem', color: '#333' }}>🎨 Colores de la Chacarita</h1>
-        <p style={{ color: '#666' }}>Arte, Historia y Comunidad</p>
+        <h1 style={{ fontSize: '2.5rem', margin: '0' }}>🎨 Colores de la Chacarita</h1>
+        <p style={{ color: '#666', marginTop: '10px' }}>Arte, Historia y Comunidad viva</p>
         <Link href="/mapa">
-          <button style={{ marginTop: '1rem', padding: '12px 25px', borderRadius: '25px', border: 'none', background: '#ff6600', color: '#fff', fontWeight: 'bold', cursor: 'pointer' }}>
-            📍 Ir al Mapa de Murales
+          <button style={{ marginTop: '1.5rem', padding: '12px 30px', borderRadius: '30px', border: 'none', background: '#ff6600', color: '#fff', fontWeight: 'bold', cursor: 'pointer', boxShadow: '0 4px 10px rgba(0,0,0,0.2)' }}>
+            📍 Ver Mapa de Murales
           </button>
         </Link>
       </header>
 
-      {/* SECCIÓN DE ANFITRIONES - UNO AL LADO DEL OTRO */}
-      <section style={{ padding: '1rem' }}>
+      <section style={{ padding: '1rem', maxWidth: '1000px', margin: '0 auto' }}>
         <h2 style={{ textAlign: 'center', color: '#d35400', marginBottom: '2rem' }}>👥 Anfitriones del Barrio</h2>
         
+        {/* Este contenedor obliga a que estén uno al lado del otro */}
         <div style={{ 
           display: 'flex', 
-          flexDirection: 'row', // Esta es la clave para que estén al lado
-          flexWrap: 'wrap',    // Pero si el celular es muy chico, se acomodan
           justifyContent: 'center', 
-          gap: '20px' 
+          gap: '15px', 
+          flexDirection: 'row', // Fila
+          flexWrap: 'nowrap',   // No saltar de línea
+          overflowX: 'auto',    // Si no caben, se desliza de lado
+          paddingBottom: '20px'
         }}>
           {anfitriones.map((a, i) => (
             <div key={i} style={{ 
-              width: '340px', 
+              minWidth: '280px', 
+              width: '45%', 
               background: '#fff', 
               borderRadius: '20px', 
-              boxShadow: '0 10px 20px rgba(0,0,0,0.1)', 
+              boxShadow: '0 8px 20px rgba(0,0,0,0.1)', 
               overflow: 'hidden',
-              border: '1px solid #eee'
+              border: '2px solid #ffcc66'
             }}>
-              {/* Foto de Perfil */}
               <div style={{ 
-                height: '380px', 
+                height: '350px', 
                 backgroundImage: `url(${a.foto})`, 
                 backgroundSize: 'cover', 
                 backgroundPosition: 'center',
-                backgroundColor: '#eee' 
+                backgroundColor: '#f0f0f0' 
               }}></div>
               
-              <div style={{ padding: '1.5rem', textAlign: 'center' }}>
-                <h3 style={{ margin: '0', color: '#ff6600' }}>{a.nombre}</h3>
-                <p style={{ fontWeight: 'bold', color: '#777', marginTop: '5px' }}>{a.rol}</p>
-                <p style={{ fontSize: '0.9rem', color: '#666', height: '50px' }}>{a.descripcion}</p>
+              <div style={{ padding: '1.2rem', textAlign: 'center' }}>
+                <h3 style={{ margin: '0', color: '#ff6600', fontSize: '1.2rem' }}>{a.nombre}</h3>
+                <p style={{ fontWeight: 'bold', color: '#777', fontSize: '0.8rem', marginBottom: '15px' }}>{a.rol}</p>
                 
-                {/* Botones Sociales */}
-                <div style={{ marginTop: '15px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  <a href={a.wa} target="_blank" style={{ textDecoration: 'none' }}>
-                    <button style={{ width: '100%', padding: '10px', borderRadius: '10px', border: 'none', background: '#25D366', color: '#fff', fontWeight: 'bold', cursor: 'pointer' }}>
-                      WhatsApp
-                    </button>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <a href={a.wa} target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
+                    <button style={{ width: '100%', padding: '10px', borderRadius: '10px', border: 'none', background: '#25D366', color: '#fff', fontWeight: 'bold', cursor: 'pointer' }}>WhatsApp</button>
                   </a>
-                  <a href={a.ig || a.fb} target="_blank" style={{ textDecoration: 'none' }}>
-                    <button style={{ 
-                      width: '100%', 
-                      padding: '10px', 
-                      borderRadius: '10px', 
-                      border: 'none', 
-                      background: a.ig ? 'linear-gradient(45deg, #f09433, #bc1888)' : '#3b5998', 
-                      color: '#fff', 
-                      fontWeight: 'bold', 
-                      cursor: 'pointer' 
-                    }}>
-                      {a.ig ? 'Instagram' : 'Facebook'}
-                    </button>
+                  <a href={a.ig || a.fb} target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
+                    <button style={{ width: '100%', padding: '10px', borderRadius: '10px', border: 'none', background: a.ig ? '#E1306C' : '#3b5998', color: '#fff', fontWeight: 'bold', cursor: 'pointer' }}>{a.ig ? 'Instagram' : 'Facebook'}</button>
                   </a>
                 </div>
               </div>
@@ -96,11 +80,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Botón de Suscripción al final */}
-      <footer style={{ marginTop: '3rem', textAlign: 'center' }}>
+      <footer style={{ marginTop: '4rem', textAlign: 'center', padding: '2rem', background: '#333', color: '#fff' }}>
         <Link href="/suscripcion">
-          <p style={{ color: '#ff6600', textDecoration: 'underline', cursor: 'pointer' }}>¿Tenés un local? Sumate aquí</p>
+          <p style={{ color: '#ffcc66', cursor: 'pointer', textDecoration: 'underline' }}>¿Sos comerciante? Sumate acá</p>
         </Link>
+        <p style={{ fontSize: '0.8rem', marginTop: '10px' }}>© 2026 Colores de la Chacarita</p>
       </footer>
     </div>
   );
