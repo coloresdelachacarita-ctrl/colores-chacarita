@@ -26,7 +26,7 @@ export default function Home() {
       paddingBottom: '3rem' 
     }}>
       
-      {/* ENCABEZADO CON LOGO Y REDES SOCIALES UNIFICADAS */}
+      {/* ENCABEZADO CON LOGO */}
       <header style={{ textAlign: 'center', padding: '0', background: 'transparent' }}>
         <img 
           src="/portada-.arte.png" 
@@ -34,69 +34,37 @@ export default function Home() {
           style={{ width: '100%', height: 'auto', display: 'block' }} 
         />
         
-        {/* FILA DE REDES SOCIALES DE LA CHACARITA - Justo abajo del logo */}
+        {/* REDES SOCIALES UNIFICADAS (Hub Digital) */}
         <div style={{ 
           display: 'flex', 
           justifyContent: 'center', 
-          gap: '12px', // Un poco más apretado para que quepan los 4
+          gap: '10px', 
           flexWrap: 'wrap', 
           marginTop: '1.5rem', 
           padding: '0 1rem' 
         }}>
           {/* TikTok */}
           <a href="https://www.tiktok.com/@colores.de.la.cha" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
-            <button style={{ 
-              padding: '10px 18px', 
-              borderRadius: '20px', 
-              border: '2px solid #fff', 
-              background: 'black', 
-              color: '#fff', 
-              fontWeight: 'bold', 
-              cursor: 'pointer' 
-            }}>📱 TikTok</button>
+            <button style={{ padding: '10px 15px', borderRadius: '20px', border: '2px solid #fff', background: 'black', color: '#fff', fontWeight: 'bold', cursor: 'pointer', fontSize: '0.85rem' }}>📱 TikTok</button>
           </a>
 
-          {/* YouTube - (NUEVO) */}
+          {/* YouTube */}
           <a href="https://www.youtube.com/@coloresdelachacarita" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
-            <button style={{ 
-              padding: '10px 18px', 
-              borderRadius: '20px', 
-              border: 'none', 
-              background: '#FF0000', // Rojo YouTube
-              color: '#fff', 
-              fontWeight: 'bold', 
-              cursor: 'pointer' 
-            }}>▶️ YouTube</button>
+            <button style={{ padding: '10px 15px', borderRadius: '20px', border: 'none', background: '#FF0000', color: '#fff', fontWeight: 'bold', cursor: 'pointer', fontSize: '0.85rem' }}>▶️ YouTube</button>
           </a>
           
-          {/* Instagram - (Enlace genérico, reemplázalo con el real si lo tienes) */}
-          <a href="https://www.instagram.com/coloresdelachacarita" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
-            <button style={{ 
-              padding: '10px 18px', 
-              borderRadius: '20px', 
-              border: 'none', 
-              background: 'linear-gradient(45deg, #f09433, #bc1888)', 
-              color: '#fff', 
-              fontWeight: 'bold', 
-              cursor: 'pointer' 
-            }}>📸 Instagram</button>
+          {/* Instagram Proyecto */}
+          <a href="https://www.instagram.com/colores.de.la.chacarita" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
+            <button style={{ padding: '10px 15px', borderRadius: '20px', border: 'none', background: 'linear-gradient(45deg, #f09433, #bc1888)', color: '#fff', fontWeight: 'bold', cursor: 'pointer', fontSize: '0.85rem' }}>📸 Instagram</button>
           </a>
           
-          {/* Facebook - (Enlace genérico, reemplázalo con el real si lo tienes) */}
+          {/* Facebook Proyecto */}
           <a href="https://www.facebook.com/coloresdelachacarita" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
-            <button style={{ 
-              padding: '10px 18px', 
-              borderRadius: '20px', 
-              border: 'none', 
-              background: '#3b5998', 
-              color: '#fff', 
-              fontWeight: 'bold', 
-              cursor: 'pointer' 
-            }}>👤 Facebook</button>
+            <button style={{ padding: '10px 15px', borderRadius: '20px', border: 'none', background: '#3b5998', color: '#fff', fontWeight: 'bold', cursor: 'pointer', fontSize: '0.85rem' }}>👤 Facebook</button>
           </a>
         </div>
 
-        <div style={{ padding: '2.5rem 1rem', display: 'flex', justifyContent: 'center' }}>
+        <div style={{ padding: '2rem 1rem', display: 'flex', justifyContent: 'center' }}>
           <Link href="/mapa">
             <button style={{ padding: '12px 30px', borderRadius: '30px', border: 'none', background: '#ff6600', color: '#fff', fontWeight: 'bold', cursor: 'pointer', boxShadow: '0 4px 10px rgba(0,0,0,0.2)' }}>
               📍 Ver Mapa de Murales
@@ -145,7 +113,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER PARA COMERCIANTES */}
+      {/* FOOTER */}
       <footer style={{ marginTop: '4rem', textAlign: 'center', padding: '3rem 1rem', background: '#1a1a1a' }}>
         <Link href="/suscripcion">
           <p style={{ color: '#ffcc66', cursor: 'pointer', textDecoration: 'underline', fontSize: '1.1rem', fontWeight: 'bold' }}>
