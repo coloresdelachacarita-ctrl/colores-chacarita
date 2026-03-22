@@ -34,31 +34,32 @@ export default function Home() {
       <section style={{ padding: '1rem', maxWidth: '1000px', margin: '0 auto' }}>
         <h2 style={{ textAlign: 'center', color: '#d35400', marginBottom: '2rem' }}>👥 Anfitriones del Barrio</h2>
         
-        {/* Este contenedor obliga a que estén uno al lado del otro */}
+        {/* CONTENEDOR FLEX INTELIGENTE (RESPONSIVO) */}
         <div style={{ 
           display: 'flex', 
           justifyContent: 'center', 
-          gap: '15px', 
-          flexDirection: 'row', // Fila
-          flexWrap: 'nowrap',   // No saltar de línea
-          overflowX: 'auto',    // Si no caben, se desliza de lado
+          gap: '20px', 
+          flexDirection: 'row', // Fila por defecto
+          flexWrap: 'wrap',     // SALTA DE LÍNEA SI NO CABE (ESTO LO HACE RESPONSIVO)
           paddingBottom: '20px'
         }}>
           {anfitriones.map((a, i) => (
             <div key={i} style={{ 
-              minWidth: '280px', 
-              width: '45%', 
+              minWidth: '280px', // Ancho mínimo para que la foto no se corte
+              maxWidth: '340px', // Ancho máximo para que no se vea gigante
+              width: '100%',      // Ocupa todo el espacio que pueda hasta el max
               background: '#fff', 
               borderRadius: '20px', 
               boxShadow: '0 8px 20px rgba(0,0,0,0.1)', 
               overflow: 'hidden',
               border: '2px solid #ffcc66'
             }}>
+              {/* Foto de Perfil */}
               <div style={{ 
                 height: '350px', 
                 backgroundImage: `url(${a.foto})`, 
-                backgroundSize: 'cover', 
-                backgroundPosition: 'center',
+                backgroundSize: 'cover', // La foto llena el espacio sin cortarse feo
+                backgroundPosition: 'center', // Centra la cara si la foto es ancha
                 backgroundColor: '#f0f0f0' 
               }}></div>
               
@@ -66,6 +67,7 @@ export default function Home() {
                 <h3 style={{ margin: '0', color: '#ff6600', fontSize: '1.2rem' }}>{a.nombre}</h3>
                 <p style={{ fontWeight: 'bold', color: '#777', fontSize: '0.8rem', marginBottom: '15px' }}>{a.rol}</p>
                 
+                {/* Botones Sociales */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <a href={a.wa} target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
                     <button style={{ width: '100%', padding: '10px', borderRadius: '10px', border: 'none', background: '#25D366', color: '#fff', fontWeight: 'bold', cursor: 'pointer' }}>WhatsApp</button>
