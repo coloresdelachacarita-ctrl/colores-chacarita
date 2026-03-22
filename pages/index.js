@@ -19,15 +19,14 @@ export default function Home() {
   ];
 
   return (
-    // CAMBIO DE FONDO: Ahora es un degradado suave de naranja a teja
     <div style={{ 
       fontFamily: 'Arial, sans-serif', 
-      background: 'linear-gradient(to bottom, #fffdfb 0%, #ffecda 40%, #fbd9b9 100%)', // Degradado suave
+      background: 'linear-gradient(to bottom, #fffdfb 0%, #ffecda 40%, #fbd9b9 100%)', 
       minHeight: '100vh', 
       paddingBottom: '3rem' 
     }}>
       
-      {/* ENCABEZADO CON EL LOGO - NOMBRE CORREGIDO */}
+      {/* ENCABEZADO CON LOGO */}
       <header style={{ textAlign: 'center', padding: '0', background: 'transparent' }}>
         <img 
           src="/portada-.arte.png" 
@@ -44,7 +43,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* SECCIÓN DE ANFITRIONES: Un diseño vertical para celulares */}
+      {/* ANFITRIONES */}
       <section style={{ padding: '1rem', maxWidth: '500px', margin: '0 auto' }}>
         <h2 style={{ textAlign: 'center', color: '#d35400', marginBottom: '2rem' }}>👥 Anfitriones del Barrio</h2>
         
@@ -52,13 +51,12 @@ export default function Home() {
           {anfitriones.map((a, i) => (
             <div key={i} style={{ 
               width: '100%', 
-              background: '#fff', // Mantenemos las tarjetas blancas para que contrasten
+              background: '#fff', 
               borderRadius: '20px', 
-              boxShadow: '0 8px 25px rgba(0,0,0,0.15)', // Sombra un poco más fuerte para el degradado
+              boxShadow: '0 8px 25px rgba(0,0,0,0.15)', 
               overflow: 'hidden',
               border: '2px solid #ffcc66'
             }}>
-              {/* Espacio para la foto */}
               <div style={{ 
                 height: '400px', 
                 backgroundImage: `url(${a.foto})`, 
@@ -67,7 +65,6 @@ export default function Home() {
                 backgroundColor: '#f0f0f0' 
               }}></div>
               
-              {/* Datos y Botones de Contacto */}
               <div style={{ padding: '1.5rem', textAlign: 'center' }}>
                 <h3 style={{ margin: '0', color: '#ff6600', fontSize: '1.4rem' }}>{a.nombre}</h3>
                 <p style={{ fontWeight: 'bold', color: '#777', marginBottom: '15px' }}>{a.rol}</p>
@@ -86,11 +83,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER PARA COMERCIANTES: Con el fondo del degradado */}
+      {/* FOOTER CON CORRECCIÓN A "CHACA" */}
       <footer style={{ marginTop: '4rem', textAlign: 'center', padding: '3rem 1rem', background: '#1a1a1a' }}>
         <Link href="/suscripcion">
           <p style={{ color: '#ffcc66', cursor: 'pointer', textDecoration: 'underline', fontSize: '1.1rem', fontWeight: 'bold' }}>
-            ¿Tenes un comercio en la chaca? Sumate al proyecto acá
+            ¿Tenes un comercio en la Chaca? Sumate al proyecto acá
           </p>
         </Link>
         <p style={{ fontSize: '0.8rem', marginTop: '20px', color: '#fff', opacity: '0.7' }}>© 2026 Colores de la Chacarita</p>
