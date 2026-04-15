@@ -3,7 +3,6 @@ export default function Home() {
   
   return (
     <div style={{ fontFamily: 'sans-serif', backgroundColor: '#f4f4f4', minHeight: '100vh', margin: 0, padding: 0 }}>
-      {/* HEADER SIMPLE */}
       <header style={{ textAlign: 'center', padding: '2rem', background: '#fff', borderBottom: '1px solid #eee' }}>
         <h1 style={{ color: '#d35400', margin: '0 0 1rem 0' }}>Colores de la Chacarita</h1>
         <a href="/nosotros" style={{ textDecoration: 'none' }}>
@@ -13,7 +12,6 @@ export default function Home() {
         </a>
       </header>
 
-      {/* CUERPO PRINCIPAL */}
       <main style={{ padding: '1rem', maxWidth: '600px', margin: '0 auto' }}>
         <section style={{ background: '#333', color: '#fff', padding: '2rem', borderRadius: '20px', textAlign: 'center', margin: '2rem 0' }}>
           <h3 style={{ color: '#ffcc66', marginTop: 0 }}>🎨 ¿Buscás un Mural?</h3>
@@ -31,7 +29,6 @@ export default function Home() {
         </section>
       </main>
 
-      {/* FOOTER */}
       <footer style={{ textAlign: 'center', padding: '3rem 1rem', background: '#1a1a1a', color: '#fff', marginTop: '3rem' }}>
         <p>© 2026 Colores de la Chacarita</p>
       </footer>
