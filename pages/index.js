@@ -1,21 +1,20 @@
 import Link from 'next/link';
 
 export default function Home() {
-  // Configuración de datos
-  const whatsappMurales = "https://wa.me/595981234567"; // Poné tu número real acá
+  const whatsappMurales = "https://wa.me/595981234567"; 
   const linkPatreon = "https://www.patreon.com/coloresdelachacarita";
   
   const anfitriones = [
     {
       nombre: "Juan Carlos",
       rol: "Artista Muralista",
-      foto: "/img/perfil-juan.jpg", // Asegurate que esta ruta sea correcta en tu carpeta public
+      foto: "/img/perfil-juan.jpg", // <--- REVISÁ QUE ESTE ARCHIVO ESTÉ EN public/img/
       wa: "https://wa.me/595981234567"
     },
     {
       nombre: "Anfitrión Local",
       rol: "Guía de Barrio",
-      foto: "https://via.placeholder.com/400x420",
+      foto: "/img/corazon.png", // <--- USAMOS LA DEL CORAZÓN COMO PRUEBA SI LA OTRA NO ESTÁ
       wa: "https://wa.me/595981234567"
     }
   ];
@@ -28,19 +27,12 @@ export default function Home() {
         <img 
           src="/img/logo.png" 
           alt="Logo Colores de la Chacarita" 
-          style={{ maxWidth: '200px', marginBottom: '1.5rem' }} 
+          style={{ maxWidth: '200px', marginBottom: '1.5rem', display: 'block', margin: '0 auto' }} 
+          onError={(e) => { e.target.style.display = 'none'; }} // Si no encuentra el logo, no muestra el icono roto
         />
-        <br />
+        <h1 style={{ color: '#d35400', fontSize: '1.8rem', margin: '10px 0' }}>Colores de la Chacarita</h1>
         <Link href="/nosotros">
-          <button style={{
-            padding: '12px 24px',
-            backgroundColor: '#8e44ad',
-            color: 'white',
-            border: 'none',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            fontWeight: 'bold'
-          }}>
+          <button style={{ padding: '12px 24px', backgroundColor: '#8e44ad', color: 'white', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: 'bold' }}>
             ¿En qué consiste el Proyecto?
           </button>
         </Link>
@@ -65,7 +57,14 @@ export default function Home() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
             {anfitriones.map((a, i) => (
               <div key={i} style={{ background: '#fff', borderRadius: '20px', overflow: 'hidden', boxShadow: '0 4px 15px rgba(0,0,0,0.1)', border: '1px solid #ffcc66' }}>
-                <div style={{ height: '350px', backgroundImage: `url(${a.foto})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundColor: '#eee' }}></div>
+                {/* DIV DE IMAGEN: Si no carga la foto, se verá un fondo gris */}
+                <div style={{ 
+                  height: '350px', 
+                  backgroundColor: '#eee',
+                  backgroundImage: `url(${a.foto})`, 
+                  backgroundSize: 'cover', 
+                  backgroundPosition: 'center' 
+                }}></div>
                 <div style={{ padding: '1.5rem', textAlign: 'center' }}>
                   <h3 style={{ margin: '0', color: '#ff6600' }}>{a.nombre}</h3>
                   <p style={{ fontWeight: 'bold', color: '#777' }}>{a.rol}</p>
@@ -80,28 +79,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SECCIÓN PATREON */}
-        <section style={{ margin: '3rem 0', padding: '2rem', background: '#fff', borderRadius: '20px', textAlign: 'center', border: '3px solid #f96854' }}>
-          <h2 style={{ color: '#f96854', marginTop: 0 }}>🎁 Apoyá a la Chaca</h2>
-          <a href={linkPatreon} target="_blank" rel="noreferrer">
-            <button style={{ background: '#f96854', color: '#fff', padding: '15px 25px', borderRadius: '10px', border: 'none', fontWeight: 'bold', cursor: 'pointer' }}>
-              Ser Mecenas en Patreon
-            </button>
-          </a>
-        </section>
-
       </main>
 
-      {/* FOOTER CON CONTADOR */}
       <footer style={{ textAlign: 'center', padding: '3rem 1rem', background: '#1a1a1a', color: '#fff', marginTop: '3rem' }}>
-        <Link href="/suscripcion">
-          <p style={{ color: '#ffcc66', textDecoration: 'underline', cursor: 'pointer' }}>¿Tenés un comercio en la Chaca? Sumate acá</p>
-        </Link>
-        <div style={{ marginTop: '20px', opacity: '0.8' }}>
-            <p style={{ fontSize: '0.7rem', marginBottom: '5px' }}>Visitantes:</p>
-            <img src="https://counter9.optistats.ovh/private/freecounterstat.php?c=818u6m9f4n5y7u3w1q2r3t4z5x6c7v8b" border="0" alt="contador" />
-        </div>
-        <p style={{ fontSize: '0.8rem', marginTop: '20px', opacity: '0.5' }}>© 2026 Colores de la Chacarita</p>
+        <p>© 2026 Colores de la Chacarita</p>
       </footer>
     </div>
   );
