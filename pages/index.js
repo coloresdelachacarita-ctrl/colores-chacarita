@@ -9,7 +9,7 @@ export default function Home() {
   // Enlaces de Redes Sociales
   const linkIG = "https://www.instagram.com/colores.de.la.chacarita?igsh=MTNrNHc3OWtxODYxbg==";
   const linkTT = "https://www.tiktok.com/@colores.de.la.cha";
-  const linkFB = "https://www.facebook.com/profile.php?id=100083103444318"; // Link de tu captura
+  const linkFB = "https://www.facebook.com/profile.php?id=100083103444318";
   const linkPT = "https://www.patreon.com/c/coloresdelachacarita";
 
   const anfitriones = [
@@ -44,14 +44,13 @@ export default function Home() {
           src="/portada-.arte.png" 
           alt="Portada Colores de la Chacarita" 
           style={{ width: '100%', height: 'auto', display: 'block' }} 
-          onError={(e) => { e.target.src = "https://via.placeholder.com/1200x400?text=Colores+de+la+Chacarita"; }}
         />
       </header>
 
       <main style={{ padding: '1rem', maxWidth: '850px', margin: '0 auto' }}>
 
-        {/* BOTONES DE REDES SOCIALES */}
-        <section style={{ textAlign: 'center', margin: '2rem 0' }}>
+        {/* REDES SOCIALES */}
+        <section style={{ textAlign: 'center', margin: '1.5rem 0' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '15px', flexWrap: 'wrap', alignItems: 'center' }}>
             <a href={linkIG} target="_blank" rel="noreferrer"><button style={{ padding: '10px 15px', backgroundColor: '#E1306C', color: '#fff', border: 'none', borderRadius: '25px', fontWeight: 'bold', cursor: 'pointer' }}>📸 Instagram</button></a>
             <a href={linkTT} target="_blank" rel="noreferrer"><button style={{ padding: '10px 15px', backgroundColor: '#010101', color: '#fff', border: 'none', borderRadius: '25px', fontWeight: 'bold', cursor: 'pointer' }}>TikTok</button></a>
@@ -60,23 +59,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* BOTÓN CONTACTO JUAN CACERES - MURALES */}
-        <section style={{ background: '#333', color: '#fff', padding: '2rem', borderRadius: '25px', textAlign: 'center', margin: '2rem 0', boxShadow: '0 8px 16px rgba(0,0,0,0.2)' }}>
-          <h2 style={{ color: '#ffcc66', margin: '0 0 10px 0' }}>🎨 ¿Querés un mural artístico?</h2>
-          <p style={{ marginBottom: '20px' }}>Contactanos aquí y te asesoramos.</p>
-          <a href={`${whatsappJuan}?text=${mensajeMural}`} target="_blank" rel="noreferrer">
-            <button style={{ background: '#25D366', color: '#fff', padding: '15px 30px', borderRadius: '35px', border: 'none', fontWeight: 'bold', cursor: 'pointer', fontSize: '1rem' }}>
-              CONTACTAR A JUAN CACERES
-            </button>
-          </a>
-        </section>
-
         {/* MAPA */}
-        <section style={{ margin: '3rem 0', textAlign: 'center' }}>
+        <section style={{ margin: '2rem 0', textAlign: 'center' }}>
           <h2 style={{ color: '#2c3e50', marginBottom: '1.5rem' }}>📍 Mapa de Murales</h2>
           <div style={{ borderRadius: '20px', overflow: 'hidden', height: '400px', border: '2px solid #ddd' }}>
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.851412030113!2d-57.6322!3d-25.2818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDE2JzU0LjUiUyA1N8KwMzcnNTUuOSJX!5e0!3m2!1ses!2spy!4v1713200000000" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.135759796443!2d-57.6322046!3d-25.282869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945da7093282f143%3A0x67341e33d45e56e0!2sLa%20Chacarita%2C%20Asunci%C3%B3n!5e0!3m2!1ses-419!2spy!4v1710000000000" 
               width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy">
             </iframe>
           </div>
@@ -85,7 +73,7 @@ export default function Home() {
         {/* ANFITRIONES */}
         <section style={{ margin: '3rem 0' }}>
             <h2 style={{ textAlign: 'center', color: '#d35400', marginBottom: '2rem' }}>👥 Anfitriones de Circuito Turístico</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '25px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '25px', marginBottom: '3rem' }}>
               {anfitriones.map((a, i) => (
                 <div key={i} style={{ background: '#fff', borderRadius: '25px', overflow: 'hidden', boxShadow: '0 5px 15px rgba(0,0,0,0.1)', textAlign: 'center', border: '1px solid #ffcc66' }}>
                   <div style={{ height: '350px', backgroundImage: `url(${a.foto})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundColor: '#eee' }}></div>
@@ -99,6 +87,27 @@ export default function Home() {
                 </div>
               ))}
             </div>
+        </section>
+
+        {/* SECCIÓN MURALES Y QUÉ ES EL PROYECTO (UBICADO DEBAJO DE LAS FOTOS) */}
+        <section style={{ background: '#333', color: '#fff', padding: '2.5rem', borderRadius: '25px', textAlign: 'center', margin: '2rem 0', boxShadow: '0 8px 16px rgba(0,0,0,0.2)' }}>
+          <h2 style={{ color: '#ffcc66', margin: '0 0 15px 0' }}>🎨 ¿Querés un mural artístico?</h2>
+          
+          <div style={{ marginBottom: '25px', textAlign: 'left', background: 'rgba(255,255,255,0.05)', padding: '20px', borderRadius: '15px' }}>
+            <h3 style={{ color: '#ffcc66', marginTop: 0, fontSize: '1.1rem' }}>¿En qué consiste el proyecto?</h3>
+            <p style={{ fontSize: '0.95rem', lineHeight: '1.5', color: '#ddd' }}>
+              Colores de la Chacarita es una iniciativa que busca transformar el barrio a través del arte público, 
+              narrando nuestra identidad y promoviendo el turismo sostenible. Cada mural cuenta una historia 
+              de nuestra cultura, mitología y gente.
+            </p>
+          </div>
+
+          <p style={{ marginBottom: '20px', fontWeight: 'bold' }}>Contactanos aquí y te asesoramos:</p>
+          <a href={`${whatsappJuan}?text=${mensajeMural}`} target="_blank" rel="noreferrer">
+            <button style={{ background: '#25D366', color: '#fff', padding: '15px 35px', borderRadius: '35px', border: 'none', fontWeight: 'bold', cursor: 'pointer', fontSize: '1.1rem' }}>
+              CONTACTAR A JUAN CACERES
+            </button>
+          </a>
         </section>
 
         {/* CARRUSEL DE LUGARES DE INTERÉS */}
