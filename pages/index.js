@@ -1,27 +1,31 @@
-
 import Link from 'next/link';
 
 export default function Home() {
+  // Definición de enlaces para evitar errores de variables no definidas
+  const whatsappMurales = "https://wa.me/595981234567"; // Reemplaza con tu número real
+  const linkPatreon = "https://www.patreon.com/coloresdelachacarita";
   const anfitriones = [
-    // Aquí van los datos de tus anfitriones (nombre, foto, rol, wa)
+    {
+      nombre: "Anfitrión 1",
+      rol: "Guía Cultural",
+      foto: "https://via.placeholder.com/400x420",
+      wa: "https://wa.me/595981234567"
+    }
   ];
 
   return (
-    <div>
-      {/* ... resto de tu header ... */}
-
-      <header>
-        {/* NUEVO BOTÓN: Enlace a "Sobre el Proyecto" */}
+    <div style={{ fontFamily: 'sans-serif', backgroundColor: '#f4f4f4' }}>
+      <header style={{ textAlign: 'center', padding: '1.5rem', background: '#fff' }}>
         <Link href="/nosotros">
           <button style={{
-            padding: '10px 20px',
-            margin: '10px',
-            backgroundColor: '#8e44ad', // Púrpura, a juego con el estilo
+            padding: '12px 24px',
+            backgroundColor: '#8e44ad',
             color: 'white',
             border: 'none',
-            borderRadius: '5px',
+            borderRadius: '8px',
             cursor: 'pointer',
-            fontSize: '1rem'
+            fontSize: '1rem',
+            fontWeight: 'bold'
           }}>
             ¿En qué consiste el Proyecto?
           </button>
@@ -49,13 +53,11 @@ export default function Home() {
               <div style={{ padding: '1.5rem', textAlign: 'center' }}>
                 <h3 style={{ margin: '0', color: '#ff6600', fontSize: '1.4rem' }}>{a.nombre}</h3>
                 <p style={{ fontWeight: 'bold', color: '#777', marginBottom: '15px' }}>{a.rol}</p>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  <a href={a.wa} target="_blank" rel="noreferrer">
-                    <button style={{ width: '100%', padding: '12px', borderRadius: '10px', border: 'none', background: '#25D366', color: '#fff', fontWeight: 'bold' }}>
-                      Agendar Recorrido
-                    </button>
-                  </a>
-                </div>
+                <a href={a.wa} target="_blank" rel="noreferrer">
+                  <button style={{ width: '100%', padding: '12px', borderRadius: '10px', border: 'none', background: '#25D366', color: '#fff', fontWeight: 'bold' }}>
+                    Agendar Recorrido
+                  </button>
+                </a>
               </div>
             </div>
           ))}
@@ -72,15 +74,10 @@ export default function Home() {
         </a>
       </section>
 
-      {/* FOOTER Y CONTADOR */}
       <footer style={{ marginTop: '4rem', textAlign: 'center', padding: '3rem 1rem', background: '#1a1a1a', color: '#fff' }}>
         <Link href="/suscripcion">
           <p style={{ color: '#ffcc66', textDecoration: 'underline', fontWeight: 'bold', cursor: 'pointer' }}>¿Tenés un comercio en la Chaca? Sumate acá</p>
         </Link>
-        <div style={{ marginTop: '20px', opacity: '0.8' }}>
-          <p style={{ fontSize: '0.7rem', marginBottom: '5px' }}>Visitantes:</p>
-          <img src="https://counter9.optistats.ovh/private/freecounterstat.php?c=818u6m9f4n5y7u3w1q2r3t4z5x6c7v8b" border="0" alt="contador" />
-        </div>
         <p style={{ fontSize: '0.8rem', marginTop: '20px', opacity: '0.5' }}>© 2026 Colores de la Chacarita</p>
       </footer>
     </div>
