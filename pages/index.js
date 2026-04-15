@@ -1,8 +1,7 @@
 import Link from 'next/link';
 
 export default function Home() {
-  // Definición de enlaces para evitar errores de variables no definidas
-  const whatsappMurales = "https://wa.me/595981234567"; // Reemplaza con tu número real
+  const whatsappMurales = "https://wa.me/595981234567";
   const linkPatreon = "https://www.patreon.com/coloresdelachacarita";
   const anfitriones = [
     {
@@ -14,8 +13,8 @@ export default function Home() {
   ];
 
   return (
-    <div style={{ fontFamily: 'sans-serif', backgroundColor: '#f4f4f4' }}>
-      <header style={{ textAlign: 'center', padding: '1.5rem', background: '#fff' }}>
+    <div style={{ fontFamily: 'sans-serif', backgroundColor: '#f4f4f4', minHeight: '100vh' }}>
+      <header style={{ textAlign: 'center', padding: '1.5rem', background: '#fff', borderBottom: '1px solid #ddd' }}>
         <Link href="/nosotros">
           <button style={{
             padding: '12px 24px',
@@ -32,7 +31,6 @@ export default function Home() {
         </Link>
       </header>
 
-      {/* SECCIÓN: SERVICIO DE MURALES */}
       <section style={{ margin: '1rem', padding: '1.5rem', background: '#333', color: '#fff', borderRadius: '20px', textAlign: 'center' }}>
         <h3 style={{ margin: '0 0 10px 0', color: '#ffcc66' }}>🎨 ¿Buscás un Mural?</h3>
         <p style={{ fontSize: '0.9rem', marginBottom: '15px' }}>Transformamos espacios con arte y cultura.</p>
@@ -43,7 +41,6 @@ export default function Home() {
         </a>
       </section>
 
-      {/* SECCIÓN ANFITRIONES */}
       <section style={{ padding: '1rem', maxWidth: '500px', margin: '0 auto' }}>
         <h2 style={{ textAlign: 'center', color: '#d35400', marginBottom: '1.5rem' }}>👥 Anfitriones del Barrio</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '30px', alignItems: 'center' }}>
@@ -64,20 +61,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECCIÓN APOYO */}
-      <section style={{ margin: '3rem 1rem', padding: '2rem', background: '#fff', borderRadius: '20px', textAlign: 'center', border: '3px solid #f96854' }}>
-        <h2 style={{ color: '#f96854' }}>🎁 Apoyá a la Chaca</h2>
-        <a href={linkPatreon} target="_blank" rel="noreferrer">
-          <button style={{ background: '#f96854', color: '#fff', padding: '15px 25px', borderRadius: '10px', border: 'none', fontWeight: 'bold' }}>
-            Ser Mecenas en Patreon
-          </button>
-        </a>
-      </section>
-
       <footer style={{ marginTop: '4rem', textAlign: 'center', padding: '3rem 1rem', background: '#1a1a1a', color: '#fff' }}>
         <Link href="/suscripcion">
           <p style={{ color: '#ffcc66', textDecoration: 'underline', fontWeight: 'bold', cursor: 'pointer' }}>¿Tenés un comercio en la Chaca? Sumate acá</p>
         </Link>
+        <div style={{ marginTop: '20px', opacity: '0.8' }}>
+            <p style={{ fontSize: '0.7rem', marginBottom: '5px' }}>Visitantes:</p>
+            <img src="https://counter9.optistats.ovh/private/freecounterstat.php?c=818u6m9f4n5y7u3w1q2r3t4z5x6c7v8b" border="0" alt="contador" />
+        </div>
         <p style={{ fontSize: '0.8rem', marginTop: '20px', opacity: '0.5' }}>© 2026 Colores de la Chacarita</p>
       </footer>
     </div>
