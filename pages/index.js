@@ -16,16 +16,7 @@ export default function Home() {
     <div style={{ fontFamily: 'sans-serif', backgroundColor: '#f4f4f4', minHeight: '100vh' }}>
       <header style={{ textAlign: 'center', padding: '1.5rem', background: '#fff', borderBottom: '1px solid #ddd' }}>
         <Link href="/nosotros">
-          <button style={{
-            padding: '12px 24px',
-            backgroundColor: '#8e44ad',
-            color: 'white',
-            border: 'none',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            fontSize: '1rem',
-            fontWeight: 'bold'
-          }}>
+          <button style={{ padding: '12px 24px', backgroundColor: '#8e44ad', color: 'white', border: 'none', borderRadius: '8px', cursor: 'pointer', fontSize: '1rem', fontWeight: 'bold' }}>
             ¿En qué consiste el Proyecto?
           </button>
         </Link>
