@@ -2,8 +2,14 @@ import Link from 'next/link';
 
 export default function Home() {
   const whatsappJuan = "https://wa.me/595981220303";
-  const mensajeMural = encodeURIComponent("Hola Juan, me interesa asesorarme para un mural artístico.");
+  const mensajeMural = encodeURIComponent("Hola Juan Caceres, me interesa asesorarme para un mural artístico.");
   const mensajeCircuito = encodeURIComponent("Hola, quiero realizar el circuito turístico.\nHorario: \nDía: \nFecha: \nCantidad de participantes: ");
+
+  // Enlaces de Redes Sociales
+  const linkIG = "https://www.instagram.com/colores.de.la.chacarita?igsh=MTNrNHc3OWtxODYxbg==";
+  const linkTT = "https://www.tiktok.com/@colores.de.la.cha";
+  const linkFB = "#"; // Reemplaza con tu link real si lo tienes
+  const linkPT = "https://www.patreon.com/coloresdelachacarita"; // Link de Patreon provisto anteriormente
 
   const anfitriones = [
     {
@@ -21,42 +27,69 @@ export default function Home() {
   ];
 
   return (
-    <div style={{ fontFamily: 'sans-serif', backgroundColor: '#f4f4f4', minHeight: '100vh', margin: 0 }}>
+    <div style={{ fontFamily: 'sans-serif', backgroundColor: '#f4f4f4', minHeight: '100vh', margin: 0, padding: 0 }}>
       
-      {/* HEADER CON LOGO CORREGIDO */}
-      <header style={{ textAlign: 'center', padding: '2.5rem', background: '#fff' }}>
+      {/* CABECERA: PORTADA GIGANTE A TODO ANCHO */}
+      <header style={{ width: '100%', padding: 0, background: '#fff' }}>
         <img 
           src="/portada-.arte.png" 
-          alt="Logo Colores de la Chacarita" 
-          style={{ maxWidth: '220px', display: 'block', margin: '0 auto 1.5rem auto' }} 
-          onError={(e) => { e.target.src = "https://via.placeholder.com/220x100?text=Colores+Chacarita"; }}
+          alt="Portada Colores de la Chacarita" 
+          style={{ width: '100%', height: 'auto', display: 'block' }} 
+          onError={(e) => { e.target.src = "https://via.placeholder.com/1200x400?text=Colores+de+la+Chacarita"; }}
         />
-        <Link href="/nosotros">
-          <button style={{ padding: '12px 25px', backgroundColor: '#8e44ad', color: '#fff', border: 'none', borderRadius: '25px', fontWeight: 'bold', cursor: 'pointer' }}>
-            ¿En qué consiste el Proyecto?
-          </button>
-        </Link>
       </header>
 
       <main style={{ padding: '1rem', maxWidth: '850px', margin: '0 auto' }}>
 
-        {/* SECCIÓN MURALES (NUEVA) */}
-        <section style={{ background: '#333', color: '#fff', padding: '2.5rem', borderRadius: '25px', textAlign: 'center', margin: '1rem 0 3rem 0', boxShadow: '0 10px 20px rgba(0,0,0,0.2)' }}>
+        {/* BOTONES DE REDES SOCIALES Y PATREON */}
+        <section style={{ textAlign: 'center', margin: '2rem 0' }}>
+          <p style={{ color: '#555', marginBottom: '15px', fontWeight: 'bold' }}>Seguinos y apoyanos en:</p>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '15px', flexWrap: 'wrap' }}>
+            
+            {/* INSTAGRAM */}
+            <a href={linkIG} target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
+              <button style={{ padding: '10px 20px', backgroundColor: '#E1306C', color: '#fff', border: 'none', borderRadius: '25px', fontWeight: 'bold', cursor: 'pointer', fontSize: '0.9rem' }}>
+                📸 Instagram
+              </button>
+            </a>
+
+            {/* TIKTOK */}
+            <a href={linkTT} target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
+              <button style={{ padding: '10px 20px', backgroundColor: '#010101', color: '#fff', border: 'none', borderRadius: '25px', fontWeight: 'bold', cursor: 'pointer', fontSize: '0.9rem' }}>
+                TikTok
+              </button>
+            </a>
+
+            {/* FACEBOOK */}
+            <a href={linkFB} target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: '#1877F2', fontSize: '1.5rem', alignSelf: 'center' }}>
+              🔵 FB
+            </a>
+
+            {/* PATREON */}
+            <a href={linkPT} target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: '#f96854', fontSize: '1.5rem', alignSelf: 'center', fontWeight: 'bold' }}>
+              Patreon
+            </a>
+
+          </div>
+        </section>
+
+        {/* SECCIÓN MURALES CON JUAN CACERES (SIN ACENTO) */}
+        <section style={{ background: '#333', color: '#fff', padding: '2.5rem', borderRadius: '25px', textAlign: 'center', margin: '3rem 0', boxShadow: '0 10px 20px rgba(0,0,0,0.2)' }}>
           <h2 style={{ color: '#ffcc66', margin: '0 0 10px 0' }}>🎨 ¿Querés un mural artístico?</h2>
           <p style={{ fontSize: '1.1rem', marginBottom: '20px' }}>Contactanos aquí y te asesoramos.</p>
           <a href={`${whatsappJuan}?text=${mensajeMural}`} target="_blank" rel="noreferrer">
             <button style={{ background: '#25D366', color: '#fff', padding: '15px 40px', borderRadius: '35px', border: 'none', fontWeight: 'bold', cursor: 'pointer', fontSize: '1.1rem' }}>
-              CONTACTAR A JUAN CÁCERES
+              CONTACTAR A JUAN CACERES
             </button>
           </a>
         </section>
 
-        {/* MAPA INTERACTIVO CORREGIDO */}
-        <section style={{ margin: '2rem 0', textAlign: 'center' }}>
-          <h2 style={{ color: '#2c3e50', fontSize: '1.5rem' }}>📍 Mapa de Murales</h2>
-          <div style={{ borderRadius: '20px', overflow: 'hidden', height: '400px', border: '2px solid #ddd' }}>
+        {/* MAPA INTERACTIVO CORREGIDO: PUNTO EN LA CHACARITA, ASUNCIÓN */}
+        <section style={{ margin: '3rem 0', textAlign: 'center' }}>
+          <h2 style={{ color: '#2c3e50', fontSize: '1.5rem', marginBottom: '1.5rem' }}>📍 Mapa de Murales</h2>
+          <div style={{ borderRadius: '20px', overflow: 'hidden', height: '400px', border: '2px solid #ddd', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.84157448375!2d-57.6321456!3d-25.2759368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945da78f69f2e3f5%3A0x6d9f3f3f3f3f3f3f!2sLa%20Chacarita%2C%20Asunci%C3%B33n!5e0!3m2!1ses!2spy!4v1713210000000" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.8623661206126!2d-57.6322976!3d-25.281895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9408e063f912e753%3A0x6b4ac0b79339e728!2sLa%20Chacarita%2C%20Asunci%C3%B3n%2C%20Paraguay!5e0!3m2!1ses-419!2spy!4v1713214589210!5m2!1ses-419!2spy" 
               width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy">
             </iframe>
           </div>
@@ -86,7 +119,7 @@ export default function Home() {
       </main>
 
       <footer style={{ textAlign: 'center', padding: '3rem', background: '#1a1a1a', color: '#fff' }}>
-        <p>© 2026 Colores de la Chacarita - Juan Cáceres Muralista</p>
+        <p>© 2026 Colores de la Chacarita - Juan Caceres Muralista</p>
       </footer>
     </div>
   );
