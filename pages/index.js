@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Link from 'next/link';
 
 export default function Home() {
   const anfitriones = [
@@ -50,6 +51,21 @@ export default function Home() {
           </Link>
         </div>
       </header>
+{/* NUEVO BOTÓN: Enlace a "Sobre el Proyecto" */}
+<Link href="/nosotros">
+  <button style={{ 
+      padding: '10px 20px', 
+      margin: '10px', 
+      backgroundColor: '#8e44ad', // Púrpura, a juego con el estilo
+      color: 'white', 
+      border: 'none', 
+      borderRadius: '5px',
+      cursor: 'pointer',
+      fontSize: '1rem'
+  }}>
+    ¿En qué consiste el Proyecto? ❓
+  </button>
+</Link>
 
       {/* SECCIÓN: SERVICIO DE MURALES */}
       <section style={{ margin: '1rem', padding: '1.5rem', background: '#333', color: '#fff', borderRadius: '20px', textAlign: 'center' }}>
