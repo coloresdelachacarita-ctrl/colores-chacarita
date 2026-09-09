@@ -28,6 +28,14 @@ const puntosMural = [
       <div style={{ maxWidth: '600px', margin: '0 auto', paddingBottom: '40px' }}>
         {/* Cabecera */}
         <header style={{ textAlign: 'center', margin: '20px 0' }}>
+<div style={{ width: '100%', margin: '16px 0', borderRadius: '16px', overflow: 'hidden', border: '1px solid #292524' }}>
+  <img 
+    src="/IMG-20260909-WA0004.jpg" 
+    alt="Mural Puerto Antequera - Portada" 
+    style={{ width: '100%', height: 'auto', display: 'block', maxHeight: '380px', objectFit: 'cover' }} 
+  />
+</div>
+
           <p style={{ color: '#f59e0b', fontSize: '12px', fontWeight: 'bold', letterSpacing: '2px', textTransform: 'uppercase' }}>
             Puerto Antequera
           </p>
