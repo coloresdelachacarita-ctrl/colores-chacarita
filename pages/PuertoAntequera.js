@@ -6,21 +6,21 @@ const puntosMural = [
     id: 1,
     titulo: 'Pescadores y el Río',
     descripcion: 'Representa la identidad ribereña, las canoas y el trabajo cotidiano en las aguas del río Paraguay.',
-    imagen: '/antequera/pescadores.jpg'
+    imagen: '/IMG-20260909-WA0004.jpg'
   },
   {
     id: 2,
     titulo: 'Memoria Viva y Pobladores',
     descripcion: 'Homenaje a los referentes históricos y los relatos recopilados en los talleres comunitarios.',
-    imagen: '/antequera/historicos.jpg'
+    imagen: '/IMG-20260909-WA0004.jpg'
   }
 ];
 
-export default function Antequera() {
+    export default function Antequera() {
   const [puntoActivo, setPuntoActivo] = useState(null);
 
   return (
-    <div style={{ backgroundColor: '#0c0a09', color: '#f5f5f4', minHeight: '100vh', padding: '16px', fontFamily: 'sans-serif' }}>
+  <div style={{ backgroundColor: '#0c0a09', color: '#f5f5f4', minHeight: '100vh', padding: '16px', fontFamily: 'sans-serif' }}>
       <Head>
         <title>Muro de la Memoria Viva - Puerto Antequera | ColoresPy</title>
       </Head>
